@@ -11,6 +11,7 @@ import {
   Card,
 } from "antd";
 
+
 const { TextArea } = Input;
 
 export default function Form1() {
@@ -35,7 +36,6 @@ export default function Form1() {
     // console.log(response, "response");
     // return;
     if (response.status === 200) {
-      alert("Your Response is Saved!!!!!!!!!");
       onResetValues();
       window.location.href = "/usersTable";
     } else {
@@ -56,199 +56,175 @@ export default function Form1() {
         </Row>
       </Col>
       <Col span={24}>
-        <Row>
-          <Col span={8}></Col>
-
-          <Col span={8} style={{ marginTop: "50px" }}>
-            <Card style={{ boxShadow: "  0 4px 8px 0 rgba(0, 0, 0, 0.2)" }}>
-              <Form
-                labelCol={{ span: 4 }}
-                wrapperCol={{ span: 14 }}
-                layout="horizontal"
-                onFinish={onSubmitForm}
-                id="myForm"
-              >
-                <Form.Item
-                  name="firstName"
-                  label="First Name "
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your firstName",
-                    },
-                  ]}
-                >
-                  <Input placeholder="firstName" />
-                </Form.Item>
-                <Form.Item
-                  name="lastName"
-                  label="Last Name "
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your lastName",
-                    },
-                  ]}
-                >
-                  <Input placeholder="lastName" />
-                </Form.Item>
-
-                <Form.Item
-                  name="email"
-                  label="Email ID"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your email",
-                    },
-                  ]}
-                >
-                  <Input type="email" placeholder="email" />
-                </Form.Item>
-
-                <Form.Item
-                  name="gender"
-                  label="Gender"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your gender",
-                    },
-                  ]}
-                >
-                  <TreeSelect
-                    treeData={[
-                      {
-                        title: "Male",
-                        value: "male",
-                      },
-                      {
-                        title: "FeMale",
-                        value: "female",
-                      },
-                    ]}
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  name="designation"
-                  label="Designation"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your designation",
-                    },
-                  ]}
-                >
-                  <TreeSelect
-                    treeData={[
-                      {
-                        title: "Front-End-Developer",
-                        value: "Front-End-Developer",
-                      },
-                      {
-                        title: "Back-End-Developer",
-                        value: "Back-End-Developer",
-                      },
-                      {
-                        title: "Full-Stack-Developer",
-                        value: "Full-Stack-Developer",
-                      },
-                      { title: "Mobile-Developer", value: "Mobile-Developer" },
-                      {
-                        title: "Software Developer",
-                        value: "Software-Developer",
-                      },
-                      {
-                        title: "Junior Software Developer",
-                        value: "Junior-Software-Developer",
-                      },
-                      {
-                        title: "Senior Software Developer",
-                        value: "Senior-Software-Developer",
-                      },
-                      {
-                        title: "Digital Marketing Analyst",
-                        value: "Digital-Marketing-Analyst",
-                      },
-                      { title: "SEO Specialist", value: "SEO-Specialist" },
-                      {
-                        title: "Quality Assurance",
-                        value: "Quality-Assurance",
-                      },
-                    ]}
-                  />
-                </Form.Item>
-                <Form.Item
-                  name="phone"
-                  label="Mobile Phone"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your phone",
-                    },
-                  ]}
-                >
-                  <Input type="number" placeholder="phone" />
-                </Form.Item>
-
-                <Form.Item
-                  name="dob"
-                  label="Date of Birth"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your dob",
-                    },
-                  ]}
-                >
-                  <DatePicker
-                    onChange={(e) => {
-                      setDob(e);
-                    }}
-                    format="DD/MM/YYYY"
-                  />
-                </Form.Item>
-
-                <Form.Item
-                  name="comments"
-                  label="Comments"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your comments",
-                    },
-                  ]}
-                >
-                  <TextArea rows={4} placeholder=" Please Enter comments" />
-                </Form.Item>
-
-                {/* <Form.Item label="Upload" valuePropName="fileList">
-          <Upload action="/upload.do" listType="picture-card">
-            <div>
-              <PlusOutlined />
-              <div style={{ marginTop: 8 }}>Upload</div>
-            </div>
-          </Upload>
-        </Form.Item> */}
-
-                <center>
-                  <Form.Item>
-                    <Button
-                      type="submit"
-                      htmlType="submit"
-                      style={{
-                        width: "144px",
-                        backgroundColor: "#0958d9",
-                        color: "#fff",
-                      }}
+        <Row justify="center" style={{ marginTop: "50px" }}>
+          <Col span={8}>
+            <Form
+              labelCol={{ span: 8 }}
+              wrapperCol={{ span: 16 }}
+              layout="horizontal"
+              onFinish={onSubmitForm}
+              id="myForm"
+            >
+              <Card>
+                <Row gutter={[24, 24]}>
+                  <Col span={12}>
+                    <Form.Item
+                      name="firstName"
+                      label="First Name"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your first name",
+                        },
+                      ]}
                     >
-                      Submit
-                    </Button>
-                  </Form.Item>
-                </center>
-              </Form>
-            </Card>
+                      <Input placeholder="First Name" />
+                    </Form.Item>
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item
+                      name="lastName"
+                      label="Last Name"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your last name",
+                        },
+                      ]}
+                    >
+                      <Input placeholder="Last Name" />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={[24, 24]}>
+                  <Col span={12}>
+                    <Form.Item
+                      name="email"
+                      label="Email ID"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your email",
+                        },
+                      ]}
+                    >
+                      <Input type="email" placeholder="Email" />
+                    </Form.Item>
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item
+                      name="gender"
+                      label="Gender"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select your gender",
+                        },
+                      ]}
+                    >
+                      <TreeSelect
+                        treeData={[
+                          {
+                            title: "Male",
+                            value: "male",
+                          },
+                          {
+                            title: "Female",
+                            value: "female",
+                          },
+                        ]}
+                      />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={[24, 24]}>
+                  <Col span={24}>
+                    <Form.Item
+                      name="designation"
+                      label="Designation"
+                      labelCol={{ style: { marginRight: "99px" } }} // Add this line to apply styling
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select your designation",
+                        },
+                      ]}
+                    >
+                      <TreeSelect
+                       style={{ width: '491px',right: '104px' }}
+                        treeData={[
+                          {
+                            title: "Front-End Developer",
+                            value: "Front-End-Developer",
+                          },
+                          {
+                            title: "Back-End Developer",
+                            value: "Back-End-Developer",
+                          },
+                          // Add other designations as needed
+                        ]}
+                      />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={[24, 24]}>
+                  <Col span={12}>
+                    <Form.Item
+                      name="phone"
+                      label="Mobile"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your phone number",
+                        },
+                      ]}
+                    >
+                      <Input type="number" placeholder="Mobile Phone" />
+                    </Form.Item>
+                  </Col>
+                  <Col span={12}>
+                    <Form.Item
+                      name="dob"
+                      label="Date of Birth"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please select your date of birth",
+                        },
+                      ]}
+                    >
+                      <DatePicker format="DD/MM/YYYY" />
+                    </Form.Item>
+                  </Col>
+                </Row>
+                <Row gutter={[24, 24]}>
+                  <Col span={24}>
+                    <Form.Item
+                      name="comments"
+                      label="Comments"
+                      labelCol={{ style: { marginRight: '99px' } }}
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your comments",
+                        },
+                      ]}
+                    >
+                      <Input.TextArea 
+                       style={{ width: '498px', right: '104px' }}
+                      
+                      rows={4} placeholder="Comments" />
+                    </Form.Item>
+                  </Col>
+                </Row>
+
+                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                  <Button type="primary" htmlType="submit">
+                    Submit
+                  </Button>
+                </Form.Item>
+              </Card>
+            </Form>
           </Col>
         </Row>
       </Col>

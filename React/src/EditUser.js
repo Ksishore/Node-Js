@@ -28,7 +28,7 @@ export default function EditUser(props) {
   const onSubmitForm = async (values) => {
     values["dob"] = values?.dob.format("DD/MM/YYYY");
     return axios
-      .put(`/updateUserDetails/${id}`, values)
+      .put(`/forms/${id}`, values)
       .then((response) => response.data)
       .catch((error) => {
         console.log(error);
@@ -260,7 +260,7 @@ export default function EditUser(props) {
               </Form>
             </Card>
           </Col>
-          <Col span={22}>
+          {/* <Col span={22}>
             <div className="user-details-container">
               <div className="user-details-card">
                 <div className="card-body">
@@ -298,7 +298,7 @@ export default function EditUser(props) {
             >
               BACK
             </Button>
-          </Col>
+          </Col> */}
         </Row>
       </Col>
     </>

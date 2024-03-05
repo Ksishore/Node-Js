@@ -102,35 +102,35 @@ app.get("/forms", async (req, res) => {
   }
 });
 
-app.put("/forms/:id", async (req, res) => {
-  const { id } = req.params;
-  const {
-    firstName,
-    lastName,
-    email,
-    gender,
-    designation,
-    phone,
-    dob,
-    comments,
-  } = req.body;
+// app.put("/forms/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const {
+//     firstName,
+//     lastName,
+//     email,
+//     gender,
+//     designation,
+//     phone,
+//     dob,
+//     comments,
+//   } = req.body;
 
-  try {
-    const updatedForm = await Form.findByIdAndUpdate(
-      id,
-      { firstName, lastName, email, gender, designation, phone, dob, comments },
-      { new: true } // To return the updated document
-    );
+//   try {
+//     const updatedForm = await Form.findByIdAndUpdate(
+//       id,
+//       { firstName, lastName, email, gender, designation, phone, dob, comments },
+//       { new: true } // To return the updated document
+//     );
 
-    if (!updatedForm) {
-      return res.status(404).json({ error: "Form not found" });
-    }
+//     if (!updatedForm) {
+//       return res.status(404).json({ error: "Form not found" });
+//     }
 
-    res.json(updatedForm);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+//     res.json(updatedForm);
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
 
 // app.post('/register', async (req, res) => {
 //   const { username, email, password } = req.body;
